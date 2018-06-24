@@ -2,14 +2,14 @@
 <script src="~/js/game.js"></script>
 
 <div class="canvas-container">
-    <canvas width="800" height="800" id="gameCanvas"></canvas>
+    <canvas width="1000" height="600" id="gameCanvas"></canvas>
 </div>
 
 <script>
     window.onload = function () {
         var canvas = document.getElementById("gameCanvas")
         var context = canvas.getContext("2d")
-        var game = new Game(canvas, context, 8, 8)
+        var game = new Game(canvas, context, 20, 12)
     }
     
 </script>

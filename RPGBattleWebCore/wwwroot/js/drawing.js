@@ -42,14 +42,15 @@ function drawLine(startPoint, endPoint, context) {
 }
 
 function drawBoard(board, game) {
+    var squareWidth = 50
     for (var i = 0; i <= board.widthRects; ++i) {
-        var startVert = new Point(i * 100, 0)
-        var endVert = new Point(i * 100, board.height)
+        var startVert = new Point(i * squareWidth, 0)
+        var endVert = new Point(i * squareWidth, board.height)
         drawLine(startVert, endVert, game.context)
     }
     for (var i = 0; i <= board.heightRects; ++i) {
-        var startHoriz = new Point(0, i * 100)
-        var endHoriz = new Point(board.width, i * 100)
+        var startHoriz = new Point(0, i * squareWidth)
+        var endHoriz = new Point(board.width, i * squareWidth)
         drawLine(startHoriz, endHoriz, game.context)
     }
 }
