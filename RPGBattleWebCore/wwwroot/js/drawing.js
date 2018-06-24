@@ -5,6 +5,14 @@
     }
 }
 
+class Tile {
+    constructor(x, y) {
+        this.selected = false
+        this.x = x
+        this.y = y
+    }
+}
+
 class Board {
     constructor(width, height, widthRects, heightRects) {
         this.widthRects = widthRects
@@ -13,7 +21,16 @@ class Board {
         this.height = height
         this.rectWidth = width / widthRects
         this.rectHeight = height / heightRects
-        this.cells = [widthRects][heightRects] //0,0 is top left
+        var tilesFirstDim = []
+        for (var i = 0; i < widthRects; ++i) {
+            var tilesSecondDim = []
+            for (var j = 0; j < heightRects; ++j) {
+                //this.cells[i][j] = new Tile()
+                tilesSecondDim[j] = new Tile(i, j)
+            }
+            tilesFirstDim[i] = tilesSecondDim
+        }
+        this.cells = tilesFirstDim
     }
 }
 

@@ -20,7 +20,16 @@ class Game {
             var yRect = Math.trunc(board.heightRects / (board.height/ sender.offsetY))
             //alert('x:' + xSquare + " y:" + ySquare)
             var context = this.getContext("2d")
-            context.fillRect(xRect * board.rectWidth, yRect * board.rectHeight, board.rectWidth, board.rectHeight)
+            if (board.cells[xRect][yRect].selected) {
+                context.fillStyle = 'white'
+                context.fillRect((xRect * board.rectWidth) + 5, (yRect * board.rectHeight) + 5, board.rectWidth - 10, board.rectHeight - 10)
+                board.cells[xRect][yRect].selected = false
+            } else {
+                context.fillStyle = 'blue'
+                context.fillRect((xRect * board.rectWidth) + 5, (yRect * board.rectHeight) + 5, board.rectWidth - 10, board.rectHeight - 10)
+                board.cells[xRect][yRect].selected = true
+            }
+            
         }, false)
     }
 
