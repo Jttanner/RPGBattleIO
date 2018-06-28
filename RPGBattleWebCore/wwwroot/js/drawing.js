@@ -21,6 +21,7 @@ class Board {
         this.height = height
         this.rectWidth = width / widthRects
         this.rectHeight = height / heightRects
+        this.selecting = false
         var tilesFirstDim = []
         for (var i = 0; i < widthRects; ++i) {
             var tilesSecondDim = []

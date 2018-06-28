@@ -4,12 +4,13 @@
 <div class="canvas-container">
     <canvas width="1000" height="600" id="gameCanvas"></canvas>
 </div>
-
+<img src="~/images/tsuchi.png" />
 <script>
     window.onload = function () {
         var canvas = document.getElementById("gameCanvas")
         var context = canvas.getContext("2d")
         var game = new Game(canvas, context, 20, 12)
+        game.drawSpriteOnSqure(0,0,0)
     }
     
 </script>
